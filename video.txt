@@ -1,0 +1,8 @@
+{
+  "nome_pokemon": "Rayquaza",
+  "tipo": "Voador / Dragão",
+  "ataque_principal": "Garra do Dragão",
+  "ataque_secundario": "Tempestade de Raios",
+  "fraqueza": "Gelo / Dragão / Fada",
+  "vida": 200
+}
