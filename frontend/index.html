@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DexCards</title>
+    <title>RareCandy Cards | TCG Dex</title>
 
     <script src="https://cdn.tailwindcss.com"></script>
 
@@ -12,46 +12,53 @@
         @layer components {
             .poke-card {
                 @apply bg-slate-800 border border-slate-700 rounded-2xl p-5 
-                       transition-all duration-300 hover:scale-105 hover:border-blue-500;
+                       transition-all duration-300 hover:scale-105 hover:border-blue-500 ;
             }
-            .btn-delete {
-                @apply bg-red-500/10 text-red-500 border border-red-500/20 
-                       px-4 py-2 rounded-lg hover:bg-red-500 hover:text-white transition-all;
+            .btn-nav {
+                @apply text-white/70 font-medium tracking-wider hover:text-white transition-colors relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-blue-500 after:transition-all hover:after:w-full;
             }
         }
 
         body {
-            background-color: #6266AF;
+            background-color: #1e214a;
+            min-height: 100vh;
         }
-    
-</style>
+    </style>
 </head>
 
-<body>
-    <div id="app" class="container mx-auto p-6 flex flex-col">
-        <header
-            class=" bg-black/10 backdrop-blur-lg flex justify-between pt-8  z-50 items-center fixed w-full top-0 left-0 ">
+<body class="text-slate-100 antialiased">
+    <header class="fixed top-0 left-0 w-full z-50 bg-slate-900/60 backdrop-blur-md border-b border-white/10">
+        <div class="container mx-auto px-6 h-20 flex justify-between items-center">
             
-            <h1 class="text-4xl tracking-wide font-bold text-white">RareCandy <span class="text-blue-500">Cards</span>
+            <h1 class="text-2xl md:text-4xl tracking-tighter font-black ">
+                RareCandy <span class="text-blue-500">Cards</span>
             </h1>
 
-            <nav id="nav_bar" class="gap-6">
-                <button id="btn_home" class="">HOME</button>
-                <button id="btn_dex" class="">DEX</button>
+            <nav id="nav_bar" class="hidden md:flex items-center gap-8">
+                <button id="btn_home" class="btn-nav">HOME</button>
+                <button id="btn_dex" class="btn-nav">DEX</button>
             </nav>
 
-            <input type="text" id="search" placeholder="Buscar pokémon..."
-                    class="bg-slate-700 text-white px-4 py-2 rounded-full outline-none focus:ring-2 ring-blue-500">
+            <div class="flex items-center gap-4">
+                <div class="relative">
+                    <input type="text" id="search" placeholder="Buscar pokémon..."
+                        class="bg-slate-800/50 border border-slate-700 text-white pl-10 pr-4 py-2 rounded-full outline-none focus:ring-2 ring-blue-500 focus:bg-slate-800 transition-all w-40 md:w-64">
+                </div>
+            </div>
+        </div>
+    </header>
 
+    <main class="container mx-auto p-6 pt-28">
+        <section id="pokemon-list" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+            
+            <div id="card1"  class="poke-card shadow-lg">
+                <div class="aspect-square bg-slate-700/50 rounded-xl mb-4 flex items-center justify-center">
+                    <span class="text-slate-500"></span>
+                </div>
+            </div>
+        </section>
+    </main>
 
-        </header>
-
-        <main id="pokemon-list" class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
-        </main>
-
-    </div>
-
-    <script src="./app.js"></script>
+    <script type="module" src="app.js"></script>
 </body>
-
 </html>
