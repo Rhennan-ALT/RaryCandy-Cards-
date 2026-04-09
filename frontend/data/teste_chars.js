@@ -6,7 +6,8 @@ export const pokemon = [
     "ataque_secundario": "Asa de Ferro",
     "fraqueza": "Água / Pedra",
     "vida": 180,
-    "image": "assets/charizard.png"
+    "image": "assets/charizard.png",
+    "card_type": "fogo"
   },
   {
     "nome_pokemon": "Blastoise",
@@ -14,7 +15,9 @@ export const pokemon = [
     "ataque_principal": "Hidrocanhão",
     "ataque_secundario": "Quebra-Crânio",
     "fraqueza": "Elétrico / Planta",
-    "vida": 200
+    "vida": 200,
+    "image": "assets/blastoise.png",
+    "card_type": "agua"
   },
   {
     "nome_pokemon": "Venusaur",
@@ -22,7 +25,9 @@ export const pokemon = [
     "ataque_principal": "Chicote de Vinha",
     "ataque_secundario": "Raio Solar",
     "fraqueza": "Fogo / Gelo",
-    "vida": 190
+    "vida": 190,
+    "image": "assets/venusaur.png",
+    "card_type": "planta"
   },
   {
     "nome_pokemon": "Pikachu",
@@ -30,7 +35,8 @@ export const pokemon = [
     "ataque_principal": "Choque do Trovão",
     "ataque_secundario": "Investida Trovão",
     "fraqueza": "Terra",
-    "vida": 60
+    "vida": 60,
+    "card_type": ""
   },
   {
     "nome_pokemon": "Gengar",
