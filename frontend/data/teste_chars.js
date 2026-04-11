@@ -69,5 +69,13 @@ export const pokemon = [
     "ataque_secundario": "Soco Focado",
     "fraqueza": "Fogo / Terra",
     "vida": 150
+  },
+    {
+    "nome_pokemon": "Lucario",
+    "tipo": "Lutador / Aço",
+    "ataque_principal": "Esfera de Aura",
+    "ataque_secundario": "Soco Focado",
+    "fraqueza": "Fogo / Terra",
+    "vida": 150
   }
 ]
