@@ -36,7 +36,7 @@ export const pokemon = [
     "ataque_secundario": "Investida Trovão",
     "fraqueza": "Terra",
     "vida": 60,
-    "card_type": ""
+    "card_type": "eletrico"
   },
   {
     "nome_pokemon": "Gengar",

@@ -15,6 +15,10 @@ const card_styles = {
     planta: {
         bg: "bg-green-500",
         borda: "border-green-700"
+    },
+    eletrico: {
+        bg: "bg-yellow-500",
+        borda: "border-yellow-700"
     }
 }
 
