@@ -11,9 +11,11 @@
     <style type="text/tailwindcss">
         @layer components {
             .poke-card {
-                @apply bg-slate-800 border border-slate-700 rounded-2xl p-5 
-                       transition-all duration-300 hover:scale-105 hover:border-blue-500 ;
-            }
+                @apply bg-slate-800/70 backdrop-blur-lg border border-slate-700 
+                rounded-2xl p-5 shadow-xl
+                transition-all duration-300 
+                hover:scale-[1.03] hover:-translate-y-2 hover:shadow-2xl hover:rotate-[0.5deg];
+}
             .btn-nav {
                 @apply text-white/70 font-medium tracking-wider hover:text-white transition-colors relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-blue-500 after:transition-all hover:after:w-full;
             }
@@ -50,7 +52,7 @@
 
     <main class="container mx-auto p-6 pt-28">
         <section id="pokemon-list" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-            
+            <div class="absolute inset-0 bg-white/5 opacity-0 hover:opacity-100 transition rounded-2xl">
             <div id="card1"  class="poke-card shadow-lg">
                 <div class="aspect-square bg-slate-700/50 rounded-xl mb-4 flex items-center justify-center">
                     <span class="text-slate-500"></span>
