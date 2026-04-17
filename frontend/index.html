@@ -25,42 +25,51 @@
             background-color: #1e214a;
             min-height: 100vh;
         }
+
     </style>
 </head>
 
 <body class="text-slate-100 antialiased">
-    <header class="fixed top-0 left-0 w-full z-50 bg-slate-900/60 backdrop-blur-md border-b border-white/10">
-        <div class="container mx-auto px-6 h-20 flex justify-between items-center">
+<header class="fixed top-0 left-0 w-full z-50 bg-slate-900/60 backdrop-blur-md border-b border-white/10">
+    
+    <div class="w-full px-4 md:px-8 h-20 flex justify-between items-center">
+        
+            <div class="flex items-center">
+                <img class="h-52 w-auto object-contain mt-5 md:flex hover:scale-110 transition-transform duration-300" src="assets/logo.png" alt="Logo RareCandy Cards">
+            </div>
+
+        <nav id="nav_bar" class="hidden md:flex items-center gap-10 ">
+            <button id="btn_home" class="btn-nav hover:text-blue-400 transition-colors font-medium">HOME</button>
+            <button id="btn_dex" class="btn-nav hover:text-blue-400 transition-colors font-medium">DEX</button>
             
-            <h1 class="text-2xl md:text-4xl tracking-tighter font-black ">
-                RareCandy <span class="text-blue-500">Cards</span>
-            </h1>
+        </nav>
 
-            <nav id="nav_bar" class="hidden md:flex items-center gap-8">
-                <button id="btn_home" class="btn-nav">HOME</button>
-                <button id="btn_dex" class="btn-nav">DEX</button>
-            </nav>
-
-            <div class="flex items-center gap-4">
-                <div class="relative">
-                    <input type="text" id="search" placeholder="Buscar pokémon..."
-                        class="bg-slate-800/50 border border-slate-700 text-white pl-10 pr-4 py-2 rounded-full outline-none focus:ring-2 ring-blue-500 focus:bg-slate-800 transition-all w-40 md:w-64">
-                </div>
+        <div class="flex items-center gap-4">
+            <div class="relative group">
+                <span class="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 group-focus-within:text-blue-400 transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                    </svg>
+                </span>
+                <input type="text" id="search" placeholder="Buscar pokémon..."
+                    class="bg-slate-800/40 border border-white/5 text-sm text-white pl-10 pr-4 py-2 rounded-lg outline-none focus:ring-1 ring-blue-500/50 focus:bg-slate-800 transition-all w-40 md:w-64 placeholder:text-slate-500">
             </div>
         </div>
-    </header>
+    </div>
+</header>
 
     <main class="container mx-auto p-6 pt-28">
         <section id="pokemon-list" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
             <div class="absolute inset-0 bg-white/5 opacity-0 hover:opacity-100 transition rounded-2xl">
-            <div id="card1"  class="poke-card shadow-lg">
-                <div class="aspect-square bg-slate-700/50 rounded-xl mb-4 flex items-center justify-center">
-                    <span class="text-slate-500"></span>
+                <div id="card1" class="poke-card shadow-lg">
+                    <div class="aspect-square bg-slate-700/50 rounded-xl mb-4 flex items-center justify-center">
+                        <span class="text-slate-500"></span>
+                    </div>
                 </div>
-            </div>
         </section>
     </main>
 
     <script type="module" src="app.js"></script>
 </body>
+
 </html>
