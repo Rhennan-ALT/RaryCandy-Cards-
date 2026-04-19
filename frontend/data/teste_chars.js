@@ -85,7 +85,6 @@ export const pokemon = [
 
   },
 
-
   {
     "nome_pokemon": "Gengar",
     "tipo": "Fantasma / Venenoso",

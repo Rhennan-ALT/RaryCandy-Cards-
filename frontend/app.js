@@ -66,8 +66,8 @@ function render() {
                 </div>
             </div>
         </div>
-        `;
+        `
     });
 }
 
-render();
+render()
