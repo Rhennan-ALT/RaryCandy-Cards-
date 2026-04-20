@@ -23,7 +23,7 @@ const card_styles = {
 }
 
 
-function render() {
+function render_cards() {
 
     container.innerHTML = "";
 
@@ -70,4 +70,34 @@ function render() {
     });
 }
 
-render()
+
+let sttPage = "home"
+
+function nav(page){
+    sttPage = page
+
+    if (page === "home"){
+        render_home()
+    }
+
+    if (page === "dex"){
+        render_dex()
+    }
+}
+
+function render_home() {
+    container.innerHTML = ""
+}
+
+function render_dex(){
+    render_cards()
+}
+
+document.getElementById("btn_home").addEventListener("click", ()=>{
+    nav("home")
+})
+document.getElementById("btn_dex").addEventListener("click", ()=>{
+    nav("dex")
+})
+
+nav("home")
