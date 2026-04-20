@@ -25,45 +25,79 @@
             margin: 0%;
             padding: 0%;
             overflow-x: hidden;
-            background-color: #28104E;
+            background-color: #2d2d2e;
             background-image: radial-gradient(circle at top right, #6237A0 0%, #28104E 50%);
             min-height: 100vh;
         }
+
+        @keyframes move-forever {
+        0% { transform: translate3d(-90px, 0, 0); }
+        100% { transform: translate3d(85px, 0, 0); }
+        }
+
+        .parallax > use {
+        animation: move-forever 25s cubic-bezier(.55,.5,.45,.5) infinite;
+        }
+        .parallax > use:nth-child(1) { animation-delay: -2s; animation-duration: 7s; }
+        .parallax > use:nth-child(2) { animation-delay: -3s; animation-duration: 10s; }
+        .parallax > use:nth-child(3) { animation-delay: -4s; animation-duration: 13s; }
+        .parallax > use:nth-child(4) { animation-delay: -5s; animation-duration: 20s; }
 
     </style>
 </head>
 
 <body class="text-slate-100 antialiased m-0 p-0">
     <header class="fixed top-0 left-0 w-full z-50 bg-slate-900/60 backdrop-blur-md border-b border-white/10">
-    
+
         <div class="w-full px-4 md:px-8 h-20 flex justify-between items-center">
-        
+
             <div class="flex items-center">
-                <img class="h-52 w-auto object-contain mt-1/2 mb-5 md:flex hover:scale-110 transition-transform duration-300" src="assets/logo_final.png" alt="Logo  GhostCards">
+                <img class="h-52 w-auto object-contain mt-1/2 mb-5 md:flex hover:scale-110 transition-transform duration-300"
+                    src="assets/logo_final.png" alt="Logo  GhostCards">
             </div>
 
             <nav id="nav_bar" class="hidden md:flex items-center gap-10 ">
                 <button id="btn_home" class="btn-nav hover:text-purple-400 transition-colors font-medium">HOME</button>
                 <button id="btn_dex" class="btn-nav hover:text-purple-400 transition-colors font-medium">DEX</button>
-            
+
             </nav>
 
             <div class="flex items-center gap-4">
                 <div class="relative group">
-                    <span class="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 group-focus-within:text-purple-400 transition-colors">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                    <span
+                        class="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 group-focus-within:text-purple-400 transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                         </svg>
                     </span>
                     <input type="text" id="search" placeholder="Buscar pokémon..."
-                    class="bg-slate-800/40 border border-white/5 text-sm text-white pl-10 pr-4 py-2 rounded-lg outline-none focus:ring-1 ring-purple-500/50 focus:bg-slate-800 transition-all w-40 md:w-64 placeholder:text-slate-500">
+                        class="bg-slate-800/40 border border-white/5 text-sm text-white pl-10 pr-4 py-2 rounded-lg outline-none focus:ring-1 ring-purple-500/50 focus:bg-slate-800 transition-all w-40 md:w-64 placeholder:text-slate-500">
                 </div>
             </div>
         </div>
     </header>
 
-    <section id="home_page">
-        <img id="haunter_home" class="flex h-screen w-full items-center justify-center m-0 p-0 bg-[url('assets/cenario_3.png')] bg-cover bg-center bg-no-repeat">
+    <section id="home_page" class="relative overflow-hidden">
+        <div
+            class="h-screen w-full bg-[url('assets/cenario_3.png')] bg-cover bg-center bg-no-repeat flex items-center justify-center">
+        </div>
+
+        <div class="absolute bottom-0 w-full">
+            <svg class="w-full h-[100px] min-h-[50px] max-h-[100px]" xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none">
+                <defs>
+                    <path id="wave-path" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+                </defs>
+                <g class="parallax">
+                    <use xlink:href="#wave-path" x="48" y="0" fill="rgba(45, 45, 46, 0.7)" />
+                    <use xlink:href="#wave-path" x="48" y="3" fill="rgba(45, 45, 46, 0.5)" />
+                    <use xlink:href="#wave-path" x="48" y="5" fill="rgba(45, 45, 46, 0.3)" />
+                    <use xlink:href="#wave-path" x="48" y="7" fill="#2d2d2e" />
+                </g>
+            </svg>
+        </div>
     </section>
 
     <main class="container mx-auto p-6 pt-28">
