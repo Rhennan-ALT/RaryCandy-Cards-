@@ -93,3 +93,32 @@ document.getElementById("btn_dex").addEventListener("click", ()=>{
 })
 
 nav("home")
+
+
+// modo dark
+
+function toggleDarkMode() {
+  const html = document.documentElement;
+  html.classList.toggle('dark');
+
+  if (html.classList.contains('dark')) {
+    localStorage.setItem('theme', 'dark');
+  } else {
+    localStorage.setItem('theme', 'light');
+  }
+}
+
+(function () {
+  const theme = localStorage.getItem('theme');
+
+  if (theme === 'dark') {
+    document.documentElement.classList.add('dark');
+  } else if (theme === 'light') {
+    document.documentElement.classList.remove('dark');
+  } else {
+    
+    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      document.documentElement.classList.add('dark');
+    }
+  }
+})();
